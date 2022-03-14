@@ -41,7 +41,7 @@ from spaCy.lang.en import English
 nlp = English(pipeline=[], max_length=5000000)
 ```
 
-Next, write a function called `read_one(file_path)` that takes the location of a file as its input, and that returns a `Counter` object representing all of the *lowercased* tokens in the corresponding text file. 
+Next, write a function called `read_one(file_path)` that takes the location of a file as its input, and that returns a `Counter` object representing all of the *lowercased* tokens in the corresponding text file. This *should* include tokens for punctuation, but *not* for newline characters (`"\n"`).
 
 *Hint*: You can get the **Token** objects in a spaCy document by iterating over a spaCy Doc object, e.g., by using Python's `for...in` loop syntax. You can get the text of a Token (as a string) using the `.text` attribute of the `Token` object. 
 
@@ -103,6 +103,8 @@ Before moving on, confirm that calling `plot_one('carroll-alice.txt')` generates
 
 ![Plot of rank vs frequency for carroll-alice.txt](images/01_zipf.png)
 
+If your graph looks *slightly* different, make sure your `read_one` function
+isn't including newlines (`"\n"`) as tokens.
 
 
 ### Part 1(c)
