@@ -16,7 +16,7 @@ if __name__ == '__main__':
 ```
 
 This pattern will be useful for you as you develop more complex python programs. 
-It allows you to write functions that will can be imported into other programs while still
+It allows you to write functions that will be imported into other programs while still
 having your `tokenizer.py` be runnable as a stand-alone program. 
 
 The `main` function should be the only place where you print anything.
